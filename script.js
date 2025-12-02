@@ -1,3 +1,11 @@
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children).filter(s => !s.classList.contains('clone'));
+
+slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    track.appendChild(clone);
+});
+
 let progress = 0;
 const loadingScreen = document.getElementById("loading-screen");
 const content = document.getElementById("content");

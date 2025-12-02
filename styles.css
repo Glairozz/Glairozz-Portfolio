@@ -341,57 +341,84 @@ body {
     transform: scale(1.13);
 }
 
-.skills-containers {
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 40px;
+}
+
+.carousel-track {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+    gap: 40px;
+    animation: scroll 25s linear infinite;
 }
 
-.skills-container {
-    flex: 1;
-    background: #111827;
-    padding: 20px;
+.carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+.slide {
+    width: 350px;
+    min-width: 350px;
+    background: #0d0d0d;
+    padding: 25px;
     border-radius: 15px;
-    transition: 0.3s;
+    border: 1px solid #2b2b2b;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.skills-container:hover {
-    background: #1e293b;
+.slide:hover {
     transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+}
+
+.slide h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #00eaff;
 }
 
 .skill-list {
     list-style: none;
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    padding: 0;
 }
 
 .skill-list li {
-    background: #1a2332;
-    padding: 10px 15px;
-    border-radius: 10px;
-    color: #d1d5db;
+    margin-bottom: 12px;
     display: flex;
-    gap: 10px;
-    transition: 0.3s;
-}
-
-.skill-list li:hover {
-    background: #1e3a8a;
-    transform: scale(1.1);
+    align-items: center;
+    font-size: 16px;
+    color: #e5e5e5;
 }
 
 .skill-list img {
-    width: 30px;
-    height: 30px;
-    transition: 0.3s;
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
-.skill-list img:hover {
-    transform: scale(1.5);
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .slide {
+        width: 280px;
+        min-width: 280px;
+        padding: 20px;
+    }
+    .carousel-track {
+        gap: 25px;
+    }
 }
 
 .certificates-container {
