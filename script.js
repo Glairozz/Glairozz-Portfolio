@@ -83,19 +83,67 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, 350);
     })();
 
-    // Slide-in on Scroll
-    (function setupSlideIn() {
-        const slideElements = document.querySelectorAll('.slide-in-right');
+    // Scroll-based Animations and Parallax
+    (function setupScrollAnimations() {
+        // Add fade-in animation to sections
+        const sections = document.querySelectorAll('.section');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            section.classList.add('fade-in-section');
+            observer.observe(section);
+        });
+
+        // Parallax effect for hero section
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (header && scrolled < 500) {
+                header.style.transform = `translateY(${scrolled * 0.5}px)`;
+                header.style.opacity = 1 - (scrolled / 500);
+            }
+        });
+
+        // Add staggered animation to about containers
+        const aboutContainers = document.querySelectorAll('.about-container');
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.animation = 'slideInLeft 0.6s ease-out forwards';
+                    }, index * 100);
                 }
             });
         }, { threshold: 0.2 });
 
-        slideElements.forEach(el => observer.observe(el));
+        aboutContainers.forEach(container => aboutObserver.observe(container));
+
+        // Add animation to education boxes
+        const educationBoxes = document.querySelectorAll('.education-box');
+        const eduObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.animation = 'slideInUp 0.6s ease-out forwards';
+                    }, index * 150);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        educationBoxes.forEach(box => eduObserver.observe(box));
     })();
 
     // Infinite Carousels
@@ -127,11 +175,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 requestAnimationFrame(animate);
             }
 
+            // Add hover effect for individual items
+            const items = track.querySelectorAll('img');
+            items.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'scale(1.2) rotate(5deg)';
+                    item.style.filter = 'brightness(1.2)';
+                    item.style.transition = 'all 0.3s ease';
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'scale(1)';
+                    item.style.filter = 'brightness(1)';
+                });
+            });
+
             animate();
         }
 
-        initInfiniteCarousel('.softwares-track', '.softwares-container', 0.5);
-        initInfiniteCarousel('.tools-track', '.tools-container', 0.5);
+        initInfiniteCarousel('.softwares-track', '.softwares-container', 0.3);
+        initInfiniteCarousel('.tools-track', '.tools-container', 0.3);
+    })();
+
+    // Mobile Menu Toggle
+    (function setupMobileMenu() {
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const navBar = document.querySelector('.nav-bar');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-bar nav ul li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navBar.classList.add('scrolled');
+            } else {
+                navBar.classList.remove('scrolled');
+            }
+        });
     })();
 
     // Error Handling
