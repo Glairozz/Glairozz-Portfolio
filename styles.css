@@ -815,7 +815,7 @@ h2 {
 
 .certificates-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     background: #111827;
     padding: 30px 20px;
@@ -903,9 +903,49 @@ h2 {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) and (max-width: 1199px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 25px;
+    }
+    
+    .project-item img {
+        height: 180px;
+    }
+    
+    .certificates-container {
+        grid-template-columns: 1fr;
+        padding: 20px 15px;
+    }
+    
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 150px;
+    }
     .certificates-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        justify-items: center;
+        padding: 0 20px;
+    }
+    
+    .contact li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .contact li img {
+        width: auto;
+        height: auto;
+        max-width: 200px;
+        min-height: 120px;
     }
 }
 
@@ -1015,7 +1055,7 @@ h2 {
 
 #contact {
     text-align: center;
-    padding: 40px 0;
+    padding: 40px 20px;
 }
 
 #contact-title {
@@ -1023,24 +1063,33 @@ h2 {
     font-size: 2rem;
 }
 
+
+
+
+
 .contact {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     padding: 0;
     margin: 0;
 }
 
 .contact li {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact li img {
-    object-fit: cover;
-    border-radius: 15px;
+    border-radius: 10%;
     transition: all 0.4s ease;
     filter: grayscale(20%);
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    display: block;
 }
 
 .contact li img:hover {
@@ -1201,9 +1250,9 @@ h2 {
     }
 
     .projects-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         padding: 15px;
-        gap: 20px;
+        gap: 25px;
     }
 
     .project-item {
@@ -1219,14 +1268,35 @@ h2 {
     }
 
     .contact {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        justify-items: center;
+        padding: 0 20px;
     }
-
+    
+    .contact li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
     .contact li img {
-        width: 60px;
-        height: 60px;
+        width: auto;
+        height: auto;
+        max-width: 200px;
+        min-height: 120px;
+    }
+    
+    .contact li img {
+        width: auto;
+        height: auto;
+    }
+    
+    .contact li img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
     }
 
     .note-container {
@@ -1310,16 +1380,27 @@ h2 {
     .projects-container {
         grid-template-columns: 1fr;
         padding: 15px;
-        gap: 20px;
+        gap: 25px;
     }
 
     .project-item img {
-        height: 120px;
+        height: 150px;
     }
-
+    
+    .certificates-container {
+        grid-template-columns: 1fr;
+        padding: 15px 10px;
+    }
+    
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 150px;
+    }
+    
     .contact li img {
-        width: 55px;
-        height: 55px;
+        width: 100px;
+        height: 100px;
     }
 }
 
