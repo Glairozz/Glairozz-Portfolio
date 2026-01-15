@@ -121,7 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const aboutContainers = document.querySelectorAll('.about-container');
         const aboutObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
                     setTimeout(() => {
                         entry.target.style.animation = 'slideInLeft 0.6s ease-out forwards';
                     }, index * 100);
@@ -135,7 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const educationBoxes = document.querySelectorAll('.education-box');
         const eduObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
                     setTimeout(() => {
                         entry.target.style.animation = 'slideInUp 0.6s ease-out forwards';
                     }, index * 150);
@@ -226,6 +228,163 @@ document.addEventListener('DOMContentLoaded', () => {
                 navBar.classList.remove('scrolled');
             }
         });
+    })();
+
+    // Particle System
+    (function setupParticles() {
+        const canvas = document.getElementById('particles-canvas');
+        if (!canvas) return;
+        
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+                this.color = `hsl(${Math.random() * 60 + 200}, 70%, 60%)`;
+                this.alpha = Math.random() * 0.5 + 0.3;
+                this.pulseSpeed = Math.random() * 0.02 + 0.01;
+                this.pulsePhase = Math.random() * Math.PI * 2;
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                // Mouse interaction
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 100 && distance > 0) {
+                    const force = (100 - distance) / 100;
+                    this.x -= (dx / distance) * force * 2;
+                    this.y -= (dy / distance) * force * 2;
+                }
+                
+                // Wrap around edges
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+                
+                // Pulsing effect
+                this.pulsePhase += this.pulseSpeed;
+                this.currentSize = this.size + Math.sin(this.pulsePhase) * 0.5;
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.currentSize, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        
+        // Create particles
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+        
+        // Mouse tracking
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        // Connect particles with lines
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 120) {
+                        ctx.save();
+                        ctx.globalAlpha = (120 - distance) / 120 * 0.3;
+                        ctx.strokeStyle = '#3b82f6';
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                }
+            }
+        }
+        
+        function animate() {
+            if (!ctx || !canvas) return;
+            
+            try {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    if (particle && typeof particle.update === 'function' && typeof particle.draw === 'function') {
+                        particle.update();
+                        particle.draw();
+                    }
+                });
+                
+                connectParticles();
+                requestAnimationFrame(animate);
+            } catch (error) {
+                console.error('Animation error:', error);
+            }
+        }
+        
+        animate();
+    })();
+
+    // Enhanced Scroll Animations
+    (function setupEnhancedScrollAnimations() {
+        // Add magnetic effect to interactive elements
+        const magneticElements = document.querySelectorAll('.contact li, .project-item, .certificates, .education-box');
+        
+        magneticElements.forEach(element => {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                const angle = Math.atan2(y, x);
+                const distance = Math.min(Math.sqrt(x * x + y * y), 50);
+                const force = (50 - distance) / 50;
+                
+                element.style.transform = `
+                    translateX(${Math.cos(angle) * force * 5}px) 
+                    translateY(${Math.sin(angle) * force * 5}px)
+                    scale(${1 + force * 0.02})
+                `;
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = '';
+            });
+        });
+        
+        // Parallax for skills section (removed to prevent conflicts with existing animations)
     })();
 
     // Error Handling
