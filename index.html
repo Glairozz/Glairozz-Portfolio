@@ -33,9 +33,9 @@
         </div>
         <nav>
             <ul id="nav-menu">
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#tech-stack">Tech Stack</a></li>
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -45,42 +45,41 @@
 
     <div id="content">
         <header class="header">
-            <img src="profile.jpg" alt="Profile Photo" class="profile-img" width="200" height="200">
-            <div class="name-subtitle">
-                <h1 id="name">Glairozz Blair P. Punay</h1>
-                <div class="hero-section">
-                    <div class="hero-content">
-                        <div class="typewriter">
-                            <span id="typed-text"></span>
-                            <span class="cursor">|</span>
-                        </div>
+            <div class="header-content">
+                <img src="https://ui-avatars.com/api/?name=Glairozz+Blair+Punay&size=180&background=1e3a8a&color=fff&rounded=true&bold=true" alt="Glairozz Blair P. Punay" class="profile-img">
+                <div class="header-text">
+                    <h1 id="name">Glairozz Blair P. Punay</h1>
+                    <div class="typewriter">
+                        <span id="typed-text"></span>
+                        <span class="cursor">|</span>
                     </div>
                 </div>
             </div>
         </header>
 
-
         <section class="section" id="about">
             <h2>About Me</h2>
-            <div class="about-row">
-                <div class="about-image">
-                    <img src="me photo.png" alt="me">
+            <div class="about-cards">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <p>My name is <strong>Glairozz Blair Punay</strong>, a 1st-year aspiring software engineer who loves diving into new ideas, building things from scratch, and figuring out how technology works behind the scenes.</p>
                 </div>
-                <div class="about-containers">
-                    <div class="about-container">
-                        <p>My name is <strong>Glairozz Blair Punay</strong>, I’m a 1st-year aspiring software engineer who loves diving into new ideas, building things from scratch, and figuring out how technology actually works behind the scenes.</p>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
-                    <div class="about-container">
-                        <p>I’m the type of person who can hype up a room and spark conversations—but also the one who quietly zones in when it’s time to code, learn, or create something meaningful.</p>
+                    <p>I'm the type of person who can hype up a room and spark conversations — but also the one who quietly zones in when it's time to code, learn, or create something meaningful.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </div>
-                    <div class="about-container">
-                        <p>Software engineering isn’t just a career path—it’s a space where I get to solve problems, express creativity, and keep leveling up one project at a time.</p>
-                    </div>
+                    <p>Software engineering isn't just a career path — it's a space where I get to solve problems, express creativity, and keep leveling up one project at a time.</p>
                 </div>
             </div>
         </section>
-
-
 
         <section class="section" id="education">
             <h2>Education</h2>
@@ -88,7 +87,7 @@
                 <div class="education-box">
                     <div class="edu-content">
                         <h4>2025 - Present</h4>
-                        <p class="highlight-text" id="program">Bachelor of Science in Computer Science</p>
+                        <p class="highlight-text">Bachelor of Science in Computer Science</p>
                         <p>Manuel S. Enverga University Foundation</p>
                     </div>
                     <img src="seal/mseufseal.png" class="edu-logo">
@@ -97,7 +96,7 @@
                 <div class="education-box">
                     <div class="edu-content">
                         <h4>2023 - 2025</h4>
-                        <p class="highlight-text track">Science, Technology, Engineering, and Mathematics</p>
+                        <p class="highlight-text">Science, Technology, Engineering, and Mathematics</p>
                         <p>Elias A. Salvador National High School</p>
                     </div>
                     <img src="seal/easnhslogo.jpg" class="edu-logo">
@@ -105,133 +104,237 @@
             </div>
         </section>
 
-
-        <section class="tech-stack-section">
+        <section class="section" id="tech-stack">
             <h2>Tech Stack</h2>
             <div class="tech-grid">
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/react/94a3b8" alt="React" title="React">
+                        <img src="https://cdn.simpleicons.org/angular/94a3b8" alt="Angular" title="Angular">
+                        <img src="https://cdn.simpleicons.org/vuedotjs/94a3b8" alt="Vue.js" title="Vue.js">
+                        <img src="https://cdn.simpleicons.org/svelte/94a3b8" alt="Svelte" title="Svelte">
+                        <img src="https://cdn.simpleicons.org/nextdotjs/94a3b8" alt="Next.js" title="Next.js">
+                        <img src="https://cdn.simpleicons.org/nuxtdotjs/94a3b8" alt="Nuxt" title="Nuxt">
+                    </div>
                     <h3>Frontend</h3>
                     <p>React, Angular, Vue.js, Svelte, Next.js, Nuxt</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/nodedotjs/94a3b8" alt="Node.js" title="Node.js">
+                        <img src="https://cdn.simpleicons.org/express/94a3b8" alt="Express" title="Express.js">
+                        <img src="https://cdn.simpleicons.org/nestjs/94a3b8" alt="NestJS" title="NestJS">
+                        <img src="https://cdn.simpleicons.org/django/94a3b8" alt="Django" title="Django">
+                        <img src="https://cdn.simpleicons.org/flask/94a3b8" alt="Flask" title="Flask">
+                        <img src="https://cdn.simpleicons.org/fastapi/94a3b8" alt="FastAPI" title="FastAPI">
+                    </div>
                     <h3>Backend</h3>
                     <p>Node.js, Express.js, NestJS, Django, Flask, FastAPI, Spring Boot, ASP.NET Core, Laravel, Ruby on Rails</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/flutter/94a3b8" alt="Flutter" title="Flutter">
+                        <img src="https://cdn.simpleicons.org/react/94a3b8" alt="React Native" title="React Native">
+                        <img src="https://cdn.simpleicons.org/swift/94a3b8" alt="SwiftUI" title="SwiftUI">
+                        <img src="https://cdn.simpleicons.org/kotlin/94a3b8" alt="Kotlin" title="Kotlin">
+                    </div>
                     <h3>Mobile</h3>
                     <p>Flutter, React Native, SwiftUI, Kotlin Multiplatform</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/postgresql/94a3b8" alt="PostgreSQL" title="PostgreSQL">
+                        <img src="https://cdn.simpleicons.org/mysql/94a3b8" alt="MySQL" title="MySQL">
+                        <img src="https://cdn.simpleicons.org/sqlite/94a3b8" alt="SQLite" title="SQLite">
+                        <img src="https://cdn.simpleicons.org/mongodb/94a3b8" alt="MongoDB" title="MongoDB">
+                        <img src="https://cdn.simpleicons.org/redis/94a3b8" alt="Redis" title="Redis">
+                        <img src="https://cdn.simpleicons.org/firebase/94a3b8" alt="Firebase" title="Firebase">
+                    </div>
                     <h3>Databases</h3>
                     <p>PostgreSQL, MySQL, SQLite, MongoDB, Redis, Cassandra, Firebase</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/prisma/94a3b8" alt="Prisma" title="Prisma">
+                        <img src="https://cdn.simpleicons.org/sequelize/94a3b8" alt="Sequelize" title="Sequelize">
+                        <img src="https://cdn.simpleicons.org/sqlalchemy/94a3b8" alt="SQLAlchemy" title="SQLAlchemy">
+                    </div>
                     <h3>ORMs</h3>
                     <p>Prisma, TypeORM, Sequelize, SQLAlchemy, Entity Framework Core</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/tailwindcss/94a3b8" alt="Tailwind CSS" title="Tailwind CSS">
+                        <img src="https://cdn.simpleicons.org/bootstrap/94a3b8" alt="Bootstrap" title="Bootstrap">
+                        <img src="https://cdn.simpleicons.org/mui/94a3b8" alt="Material UI" title="Material UI">
+                        <img src="https://cdn.simpleicons.org/chakraui/94a3b8" alt="Chakra UI" title="Chakra UI">
+                    </div>
                     <h3>CSS / UI</h3>
                     <p>Tailwind CSS, Bootstrap, Material UI, Chakra UI</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/graphql/94a3b8" alt="GraphQL" title="GraphQL">
+                        <img src="https://cdn.simpleicons.org/grpc/94a3b8" alt="gRPC" title="gRPC">
+                    </div>
                     <h3>APIs</h3>
                     <p>REST, GraphQL, gRPC, WebSockets</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/auth0/94a3b8" alt="Auth0" title="Auth.js">
+                        <img src="https://cdn.simpleicons.org/keycloak/94a3b8" alt="Keycloak" title="Keycloak">
+                        <img src="https://cdn.simpleicons.org/firebase/94a3b8" alt="Firebase Auth" title="Firebase Authentication">
+                    </div>
                     <h3>Authentication</h3>
                     <p>Auth.js, Keycloak, Firebase Authentication, OAuth 2.0, JWT</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/amazonwebservices/94a3b8" alt="AWS" title="AWS">
+                        <img src="https://cdn.simpleicons.org/googlecloud/94a3b8" alt="GCP" title="Google Cloud">
+                        <img src="https://cdn.simpleicons.org/azure/94a3b8" alt="Azure" title="Microsoft Azure">
+                        <img src="https://cdn.simpleicons.org/cloudflare/94a3b8" alt="Cloudflare" title="Cloudflare">
+                    </div>
                     <h3>Cloud</h3>
-                    <p>Amazon Web Services (AWS), Google Cloud (GCP), Microsoft Azure, Cloudflare</p>
+                    <p>AWS, Google Cloud, Microsoft Azure, Cloudflare</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/docker/94a3b8" alt="Docker" title="Docker">
+                        <img src="https://cdn.simpleicons.org/kubernetes/94a3b8" alt="Kubernetes" title="Kubernetes">
+                        <img src="https://cdn.simpleicons.org/githubactions/94a3b8" alt="GitHub Actions" title="GitHub Actions">
+                        <img src="https://cdn.simpleicons.org/terraform/94a3b8" alt="Terraform" title="Terraform">
+                    </div>
                     <h3>DevOps</h3>
                     <p>Docker, Kubernetes, GitHub Actions, Jenkins, Terraform</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/prometheus/94a3b8" alt="Prometheus" title="Prometheus">
+                        <img src="https://cdn.simpleicons.org/grafana/94a3b8" alt="Grafana" title="Grafana">
+                        <img src="https://cdn.simpleicons.org/sentry/94a3b8" alt="Sentry" title="Sentry">
+                    </div>
                     <h3>Monitoring</h3>
                     <p>Prometheus, Grafana, Sentry</p>
                 </div>
-                <div class="tech-category">
+                <div class="tech-card">
+                    <div class="tech-icons">
+                        <img src="https://cdn.simpleicons.org/jest/94a3b8" alt="Jest" title="Jest">
+                        <img src="https://cdn.simpleicons.org/cypress/94a3b8" alt="Cypress" title="Cypress">
+                        <img src="https://cdn.simpleicons.org/playwright/94a3b8" alt="Playwright" title="Playwright">
+                    </div>
                     <h3>Testing</h3>
                     <p>Jest, Vitest, Cypress, Playwright</p>
                 </div>
             </div>
             <div class="tech-highlight">
                 <h4>Modern Full-Stack Stack (2026)</h4>
-                <p>Next.js + Tailwind CSS + FastAPI + PostgreSQL + Prisma + Auth.js + AWS/Cloudflare + Docker + GitHub Actions</p>
+                <p>
+                    <img src="https://cdn.simpleicons.org/nextdotjs/94a3b8" alt="Next.js" title="Next.js">
+                    <span>Next.js</span>
+                    <span class="sep">+</span>
+                    <img src="https://cdn.simpleicons.org/tailwindcss/94a3b8" alt="Tailwind CSS" title="Tailwind CSS">
+                    <span>Tailwind CSS</span>
+                    <span class="sep">+</span>
+                    <img src="https://cdn.simpleicons.org/fastapi/94a3b8" alt="FastAPI" title="FastAPI">
+                    <span>FastAPI</span>
+                    <span class="sep">+</span>
+                    <img src="https://cdn.simpleicons.org/postgresql/94a3b8" alt="PostgreSQL" title="PostgreSQL">
+                    <span>PostgreSQL</span>
+                    <span class="sep">+</span>
+                    <img src="https://cdn.simpleicons.org/prisma/94a3b8" alt="Prisma" title="Prisma">
+                    <span>Prisma</span>
+                    <span class="sep">+</span>
+                    <img src="https://cdn.simpleicons.org/auth0/94a3b8" alt="Auth.js" title="Auth.js">
+                    <span>Auth.js</span>
+                    <span class="sep">+</span>
+                    <img src="https://cdn.simpleicons.org/amazonwebservices/94a3b8" alt="AWS" title="AWS">
+                    <span>AWS/Cloudflare</span>
+                    <span class="sep">+</span>
+                    <img src="https://cdn.simpleicons.org/docker/94a3b8" alt="Docker" title="Docker">
+                    <span>Docker</span>
+                    <span class="sep">+</span>
+                    <img src="https://cdn.simpleicons.org/githubactions/94a3b8" alt="GitHub Actions" title="GitHub Actions">
+                    <span>GitHub Actions</span>
+                </p>
             </div>
         </section>
-
-
 
         <section class="section" id="certificates">
             <h2>Certificates</h2>
             <div class="certificates-container">
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/python for everybody.png" alt="Programming for Everybody certificate">
                     <p><a href="https://www.coursera.org/learn/python/home/module/1" target="_blank" rel="noopener noreferrer"><strong>Programming for Everybody (Python)</strong></a></p>
                 </div>
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/intro to computers.png" alt="Introduction to Computers certificate">
                     <p><a href="https://www.coursera.org/learn/introduction-to-computers/home/welcome" target="_blank" rel="noopener noreferrer"><strong>Introduction to Computers</strong></a></p>
                 </div>
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/hello python.png" alt="Hello Python certificate">
                     <p><a href="#" target="_blank" rel="noopener noreferrer"><strong>Hello Python: Introduction to Programming</strong></a></p>
                 </div>
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/functions and conditional statements.png" alt="Functions and Conditional Statements certificate">
                     <p><a href="#" target="_blank" rel="noopener noreferrer"><strong>Functions and Conditional Statements</strong></a></p>
                 </div>
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/loops and strings.png" alt="Loops and Strings certificate">
                     <p><a href="#" target="_blank" rel="noopener noreferrer"><strong>Loops and Strings in Python</strong></a></p>
                 </div>
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/python selection.png" alt="Python selection certificate">
                     <p><a href="https://www.coursera.org/learn/codio-python-basics/home/module/1" target="_blank" rel="noopener noreferrer"><strong>Python Basics: Selection and Iteration</strong></a></p>
                 </div>
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/python structure.png" alt="Python structures certificate">
                     <p><a href="https://www.coursera.org/learn/python-basic-structures-lists-strings-and-files/home/module/1" target="_blank" rel="noopener noreferrer"><strong>Python Basic Structures: Lists, Strings, and Files</strong></a></p>
                 </div>
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/pygame.png" alt="Pygame certificate">
                     <p><a href="https://www.coursera.org/learn/python-game-development-with-pygame/home/module/1" target="_blank" rel="noopener noreferrer"><strong>Python Game Development with Pygame</strong></a></p>
                 </div>
-                <div class="certificates">
+                <div class="certificate">
                     <img src="certificates/frontend dev.png" alt="Frontend Development">
                     <p><a href="https://www.coursera.org/learn/introduction-to-front-end-development/home/week/1" target="_blank" rel="noopener noreferrer"><strong>Introduction to Frontend Development</strong></a></p>
                 </div>
             </div>
         </section>
 
-
         <section class="section" id="projects">
             <h2>Projects</h2>
             <div class="projects-container">
                 <div class="project-item">
-                    <img src="projects/meet me.png" alt="Project 8">
-                    <a href="https://glairozz.github.io/graphic-design-portfolio-practice/"><strong>Graphic Design Portfolio </strong></a>
-                    <p>
-                        A collection of my graphic design works including posters, logos, and social media graphics. Created using Canva and Adobe Photoshop.
-                    </p>
+                    <img src="projects/meet me.png" alt="Graphic Design Portfolio">
+                    <a href="https://glairozz.github.io/graphic-design-portfolio-practice/"><strong>Graphic Design Portfolio</strong></a>
+                    <p>A collection of my graphic design works including posters, logos, and social media graphics.</p>
                 </div>
                 <div class="project-item">
-                    <img src="projects/y-safe.png" alt="Project 9">
+                    <img src="projects/y-safe.png" alt="Y-SAFE">
                     <a href="https://y-safe-v668.onrender.com/dashboard.html"><strong>Y-SAFE</strong></a>
-                    <p>
-                        A comprehensive safety management system with dashboard functionality. Built to provide users with safety monitoring and management tools through an intuitive web interface.
-                    </p>
+                    <p>A comprehensive safety management system with dashboard functionality and safety monitoring tools.</p>
                 </div>
                 <div class="project-item">
-                    <img src="projects/algo visualizer.png" alt="Project 10">
+                    <img src="projects/algo visualizer.png" alt="Python Algorithm Visualizer">
                     <a href="https://glairozz.github.io/python-algorithm-visualizer/"><strong>Python Algorithm Visualizer</strong></a>
-                    <p>
-                        An interactive visual tool for understanding how various algorithms work step-by-step. Built with Python, it provides visual representations of sorting algorithms, pathfinding, and data structures to help users learn computer science concepts.
-                    </p>
+                    <p>An interactive visual tool for understanding sorting algorithms, pathfinding, and data structures.</p>
+                </div>
+                <div class="project-item">
+                    <img src="projects/egd.png" alt="Ethan's Great Dungeon">
+                    <a href="https://github.com/glairozzblair-gif/Pygame-Ethans-Great-Dungeon.git"><strong>Ethan's Great Dungeon</strong></a>
+                    <p>A 2D dungeon crawler game made with Pygame featuring multiple levels, enemies, and collectible items.</p>
+                </div>
+                <div class="project-item">
+                    <img src="projects/lotr.png" alt="Lord of the Rings Library">
+                    <a href="https://glairozz.github.io/lord-of-the-rings/"><strong>Lord of the Rings Library</strong></a>
+                    <p>A comprehensive website about the Lord of the Rings series with character profiles and interactive elements.</p>
+                </div>
+                <div class="project-item">
+                    <img src="projects/got&hotd.png" alt="ASOIAF Library">
+                    <a href="https://glairozz.github.io/A-Song-of-Ice-and-Fire---The-Dance-of-The-Dragons/"><strong>ASOIAF & The Dance of Dragons</strong></a>
+                    <p>A detailed website showcasing information about the A Song of Ice and Fire series.</p>
                 </div>
             </div>
         </section>
@@ -249,16 +352,14 @@
                     <a href="viber://chat?number=%2B639950960349"><img src="contacts/viber.png" alt="Viber"></a>
                 </li>
                 <li>
-                    <a href="mailto:ibotpunay@gmail.com?subject=Hello&body=Hi%2C%20I%20wanted%20to%20contact%20you."><img src="contacts/email.png" alt="Email"></a>
+                    <a href="mailto:ibotpunay@gmail.com"><img src="contacts/email.png" alt="Email"></a>
                 </li>
             </ul>
         </section>
 
-        <section class="section">
-            <div class="note-container">
-                © 2025 Glairozz Blair P. Punay
-            </div>
-        </section>
+        <footer class="footer">
+            <p>&copy; 2025 Glairozz Blair P. Punay</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>

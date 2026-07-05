@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const barFill = document.getElementById('bar-fill');
     const typedText = document.getElementById('typed-text');
 
-    // Loading Screen
     (function runLoading() {
         const duration = 3000;
         const interval = 50;
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, interval);
     })();
 
-    // Typewriter Effect
     (function setupTypewriter() {
         if (!typedText) return;
         const texts = [
@@ -83,10 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, 350);
     })();
 
-    // Scroll-based fade-in
     (function setupScrollAnimations() {
         const sections = document.querySelectorAll('.section');
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -101,11 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })();
 
-    // Mobile Menu Toggle
     (function setupMobileMenu() {
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
-        const navBar = document.querySelector('.nav-bar');
 
         if (hamburger && navMenu) {
             hamburger.addEventListener('click', () => {
@@ -120,17 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
+    })();
 
+    (function setupNavbarScroll() {
+        const navBar = document.querySelector('.nav-bar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navBar.classList.add('scrolled');
+            if (window.scrollY > 0) {
+                navBar.style.borderBottomColor = '#1e293b';
             } else {
-                navBar.classList.remove('scrolled');
+                navBar.style.borderBottomColor = '#1e293b';
             }
         });
     })();
 
-    // Error Handling
     window.addEventListener('error', ev => {
         console.error('Runtime error captured:', ev.message, ev.filename, 'line', ev.lineno);
     });
