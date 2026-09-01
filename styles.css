@@ -177,18 +177,7 @@ body {
     color: #64748b;
 }
 
-.cursor {
-    display: inline-block;
-    width: 2px;
-    margin-left: 2px;
-    animation: blink 0.7s infinite;
-    color: #64748b;
-}
 
-@keyframes blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75% { opacity: 0; }
-}
 
 .section {
     padding: 72px 20px;
